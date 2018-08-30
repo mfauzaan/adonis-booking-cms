@@ -1,0 +1,52 @@
+@layout('admin/master')
+
+@section('content')
+
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"><h3 class="page-title">Bookings</h3></div>
+          </div>
+
+        	<div class="row">
+							<!-- TABLE HOVER -->
+							<div class="panel">
+								<div class="panel-body">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Name</th>
+												<th>Arrival Date</th>
+												<th>Departure Date</th>
+												<th>Room</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+                      @each(booking in bookings)
+                        <tr>
+												<td>{{booking.id}}</td>
+												<td>{{booking.first_name}}</td>
+												<td>{{booking.arrival_date}}</td>
+												<td>{{booking.departure_date}}</td>
+												<td>{{booking.room.name}}</td>
+												<td>
+                        <a href="{{ route('bookings.edit', { id: booking.id })}}" class="btn btn-primary btn-sm">View</a>
+                        </td>
+											</tr>
+                      @endeach
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END TABLE HOVER -->
+						</div>
+            <!-- END CONDENSED TABLE -->
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+@endsection

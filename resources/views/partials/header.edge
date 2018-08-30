@@ -1,0 +1,53 @@
+<div class="site-header">
+	<div class="container">
+		<!-- TOP HEADER -->
+		<div id="top-header" class="row hidden-xs hidden-sm hidden-md">
+			<div class="col-md-6">
+				<span><i class="flaticon-mail"></i> {{ email.description || ''}}</span>
+				<span><i class="flaticon-technology"></i>{{ number.description || ''}}</span>
+			</div>
+			<div class="col-md-6 text-right">
+				<ul id="social-media-header">
+					<li><a href="{{ facebook.description || ''}}" class="flaticon-facebook-logo-in-circular-button-outlined-social-symbol"></a></li>
+					<li><a href="{{ twitter.description || ''}}" class="flaticon-twitter-circular-button"></a></li>
+					<li><a href="{{ instagram.description || ''}}" class="flaticon-instagram"></a></li>
+				</ul>
+			</div>
+		</div> <!-- END OF TOP HEADER -->
+
+		<!-- MAIN HEADER -->
+		<div id="main-header" class="row">
+			<div class="col-md-4 col-xs-9">
+				<img  class="img-responsive top-vlogo sticky-logo" src="assets/images/default/logo-04.png">
+				<img  class="img-responsive top-logo" src="assets/images/default/logo-03.png">
+			</div>
+			<div class="col-md-8 col-xs-12 text-right hidden-xs hidden-sm">
+				<ul id="main-nav">
+					<li><a href="#home" class="smooth-scroll animated-underline">Home</a></li>
+					<li><a href="#rooms" class="smooth-scroll animated-underline">Rooms</a></li>
+					<li><a href="#dining" class="smooth-scroll animated-underline">Activity</a></li>
+					<li><a href="#meetings-and-events" class="smooth-scroll animated-underline">Restaurents</a></li>
+					<li><a href="#about" class="smooth-scroll animated-underline">About</a></li>
+					<li><a href="#contact-us" class="smooth-scroll animated-underline">Contact Us</a></li>
+					<li><a href="#" class="button" data-toggle="modal" data-target="#booking-form-modal">Book Now</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-3 hidden-md hidden-lg">
+				<a href="#" id="mobile-menu-btn" class="pull-right"><i class="flaticon-bars"></i></a>
+				<div id="mobile-menu">
+					<a href="#" id="close-mobile-menu-btn"><i class="flaticon-cross-out"></i> Close</a>
+					<ul>
+						<li><a href="#home" class="smooth-scroll">Home</a></li>
+						<li><a href="#rooms" class="smooth-scroll">Rooms</a></li>
+						<li><a href="#dining" class="smooth-scroll">Dining</a></li>
+						<li><a href="#meetings-and-events" class="smooth-scroll">Meetings &amp; Events</a></li>
+						<li><a href="#about" class="smooth-scroll">About</a></li>
+						<li><a href="#contact-us" class="smooth-scroll">Contact Us</a></li>
+					</ul>
+					<a href="#" class="button large expand" data-toggle="modal" data-target="#booking-form-modal">Book Now</a>
+				</div>
+				<div id="mobile-menu-overlay"></div>
+			</div>
+		</div> <!-- END OF MAIN HEADER -->
+	</div>
+</div> <!-- END OF SITE HEADER -->

@@ -1,0 +1,69 @@
+<section id="about" class="white-space-5">
+	<div class="container">
+		<div class="row">
+    <div class="col-md-6">
+      <h1 class="title white-space-6">
+        memorable <span class="normal dark-grey">stay</span><br>
+        in Magic <span class="normal colored">life hotel</span><br>
+      </h1>
+    </div>
+    <div class="col-md-6">
+			<h4 class="light underline uppercase">About Our Hotel</h4>
+      <p class="light">Located on the beachfront in Felidhoo, Magiclife Guesthouse features a shared lounge. Boasting a 24-hour front desk, this property also provides guests with a restaurant. The property offers a children's playground. At the guest house, every room comes with a wardrobe. The private bathroom is fitted with a shower. A continental or buffet breakfast is available daily at the property. Skiing is among the activities that guests can enjoy near Magiclife Guesthouse. We speak your language!</p>
+    </div>
+	</div>
+	
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row white-space-2">
+					<div class="col-xs-6">
+						<img src="assets/images/default/640x426.png" class="img-responsive" alt="about-image">
+					</div>
+					<div class="col-xs-6">
+						<img src="assets/images/default/640x426.png" class="img-responsive" alt="about-image">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<img src="assets/images/default/640x426.png" class="img-responsive" alt="about-image">
+					</div>
+					<div class="col-xs-6">
+						<img src="assets/images/default/640x426.png" class="img-responsive" alt="about-image">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h4 class="light underline uppercase white-space-2">ABOUT MALDIVES</h4>
+				<p class="light">The Maldives, known to the locals in their native language (Dhivehi) as Dhivehi Raajje, are an archipelago of 1,192 coral islands grouped into 26 natural coral atolls in the Indian Ocean. They lie south-southwest of India and west of Sri Lanka. None of the coral islands measures more than 1.8 metres above sea level. Only 192 islands are inhabited by its 300,000 inhabitants. The rest of the islands remain virgin islands except for more than 100 islands that have been developed for the top end of the tourist market. With its abundant sea life and sandy beaches, The Maldives is portrayed by travel companies as a tropical paradise. Maldives was for the most part unknown to tourists until the early 1970s. The economy revolves around tourism, and fisheries.Tourism accounts for 28% of the GDP. Over 90% of the state government income comes from import duties and tourism-related taxes.</p>
+				<a href="https://en.wikipedia.org/wiki/Maldives" class="button">Read More</a>
+			</div>
+		</div>
+		<div class="white-space-3"></div>
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="title white-space-7">
+					Discover <span class="normal dark-grey">the</span><br>
+					<span class="normal colored">Sunny side</span> of Life<br>
+				</h1>
+			</div>
+			<div class="col-md-6">
+				<h4 class="light underline uppercase">Guest Reviews</h4>
+				<div class="owl-carousel owl-theme">
+					@each(review in reviews)
+						<div class="white-space-2">
+						<span class="light">{{ review.customer_name}}</span>
+						<br>
+						@each(number in range(review.rating))
+							<span class="flaticon-shape tiny-icon"></span>
+						@endeach
+						
+						<br><br>
+						<p>{{ review.name }}</p>
+						<p class="light">{{review.description}}</p>
+					</div>
+					@endeach
+				</div>
+			</div>
+		</div>
+	</div>
+</section> <!-- END OF ABOUT -->

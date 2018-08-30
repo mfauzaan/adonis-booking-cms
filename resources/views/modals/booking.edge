@@ -1,0 +1,105 @@
+	<div class="modal fade" id="booking-form-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="flaticon-cross-out"></span></button>
+					<h4 class="modal-title light" ><span class="flaticon-calendar"></span> Booking Form</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+					<form action="{{ route('bookings.store')}}" method="POST">
+							{{ csrfField() }}
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="First Name" name="first_name">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Last Name" name="last_name">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Email Address" name="email">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Phone Number" name="mobile_number">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Arrival" data-provide="datepicker" name="arrival_date">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Departure" data-provide="datepicker" name="departure_date">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<select class="form-control" name="adult">
+										<option disabled selected>Adults</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<select class="form-control" name="child">
+										<option disabled selected>Children</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<select class="form-control" name="room_id">
+										<option disabled selected>Room</option>
+										@each(room in rooms)
+										<option value="{{room.id}}" selected>{{room.name}}</option>
+										@endeach
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<select class="form-control" name="breakfast">
+										<option disabled selected>Include Breakfast</option>
+										<option>Yes</option>
+										<option>No</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<textarea rows="5" class="form-control" placeholder="Special Requests" name="special_request"></textarea>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="checkbox">
+										<label>
+											<input required type="checkbox"> <span class="light">I agree to the Terms &amp; Conditions</span>
+										</label>
+									</div>
+									<button type="submit" class="button ghost white">Confirm and Book</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

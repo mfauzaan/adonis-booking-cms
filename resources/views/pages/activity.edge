@@ -1,0 +1,28 @@
+		<section id="dining" class="white-space-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-6 col-md-offset-3 white-space-2 text-center">
+						<h2 class="light dark-grey underline uppercase">Activity</h2>
+					</div>
+				</div>
+				<div class="white-space-3"></div>
+					<div class="owl-carousel owl-theme">
+						@each(activity in activities)
+							<div class="white-space-2">
+								<div class="row">
+									<div class="col-md-6">
+										<img src="assets/images/default/640x426.png" class="img-responsive" alt="dining">
+										<div class="white-space-2"></div>
+									</div>
+									<div class="col-md-6">
+										<h2 class="colored">{{ activity.name }}</h2>
+										<p class="light">{{activity.description}}</p>
+										<a href="#" class="button large" data-toggle="modal" data-target="#booking-form-modal">Book Now</a>
+									</div>
+								</div>
+						</div>
+						@endeach
+					</div>
+			</div>
+			<div class="white-space-3"></div>
+		</section> <!-- END OF DINING -->

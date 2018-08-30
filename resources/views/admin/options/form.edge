@@ -1,0 +1,16 @@
+  {{ csrfField() }}
+  <div class="row">
+    <!-- TABLE HOVER -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Option Infromations</h3>
+      </div>
+      <div class="panel-body">
+        <label for="">{{option.name}}</label>
+        <input type="text" class="form-control" name="description" placeholder="" value="{{ old('description', option.description || '') }}" required>
+        <br>
+      <button type="submit" class="btn btn-primary">{{ option.name ? 'Save Changes' : 'Create Activty' }}</button>
+      </div>
+    </div>
+    <!-- END TABLE HOVER -->
+</div>

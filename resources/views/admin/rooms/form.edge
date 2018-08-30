@@ -1,0 +1,39 @@
+  {{ csrfField() }}
+  <div class="row">
+    <!-- TABLE HOVER -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Room Infromations</h3>
+      </div>
+      <div class="panel-body">
+        <label for="">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Name" value="{{ old('name', room.name || '') }}" required>
+        <br>
+        <label for="">Description</label>
+        <textarea class="form-control" placeholder="Description" name="description" rows="4">{{ old('description', room.description || '') }}</textarea>
+        <br>
+        <label for="" >Type</label>
+        <select class="form-control" name="type">
+          <option value="2" {{ room.type == '2' ? 'selected' : '' }}>Single</option>
+          <option value="3" {{ room.type == '3' ? 'selected' : '' }}>Double</option>
+          <option value="4" {{ room.type == '4' ? 'selected' : '' }}>Triple</option>
+        </select>
+        <br>
+        <label for="">Price</label>
+        <input type="number" class="form-control" name="price" placeholder="Price" value="{{ old('price', room.price || '') }}" required step=".01">
+        <br>
+        <label for="">Breakfast Included</label>
+        <label class="fancy-radio">
+          <input name="breakfast" value="true" type="radio" checked {{room.breakfast == true ? 'checked' : ''}}>
+          <span><i></i>True</span>
+        </label>
+        <label class="fancy-radio">
+          <input name="breakfast" value="false" type="radio" {{room.breakfast == false ? 'checked' : ''}}>
+          <span><i></i>False</span>
+        </label>
+        <br>
+      <button type="submit" class="btn btn-primary">{{ room.name ? 'Save Changes' : 'Create Room' }}</button>
+      </div>
+    </div>
+    <!-- END TABLE HOVER -->
+</div>

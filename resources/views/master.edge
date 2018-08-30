@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  @include('partials.head')
+<body>
+	<div id="page-loader">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	<!-- SITE WRAPPER -->
+	<div class="site-wrapper">
+		@include('partials.header')
+		
+		<!-- HOME -->
+		@include('pages.home')
+		
+		<!-- ROOMS -->
+		@include('pages.rooms')
+
+		<!-- DINING -->
+		@include('pages.activity')
+
+		<!-- MEETINGS & EVENTS -->
+		@include('pages.restaurents')
+
+		<!-- ABOUT -->
+		@include('pages.about')
+
+		<!-- CONTACT US -->
+		@include('pages.contact')
+		
+	</div> <!-- END OF SITE WRAPPER -->
+
+  <!-- MODALS -->
+  @include('modals.booking')
+  @include('modals.rooms')
+
+  @include('partials.script')
+</body>
+</html>

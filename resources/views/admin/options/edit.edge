@@ -1,0 +1,21 @@
+@layout('admin/master')
+
+@section('content')
+
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"><h3 class="page-title">Create Room</h3></div>
+          </div>
+          
+        <form action="{{ route('options.update', { id: option.id})}}?_method=PUT" method="POST">
+            @include('admin.options.form')
+        </form>
+            <!-- END CONDENSED TABLE -->
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+@endsection

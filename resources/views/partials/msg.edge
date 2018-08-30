@@ -1,0 +1,23 @@
+@if(old('notification'))
+
+  <div class="alerts-success">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="flaticon-cross-out"></span></button>
+			<h4 class="modal-title light" ><span class="flaticon-calendar"></span> Booking Success</h4>
+		</div>
+		<div class="modal-body" style="background-color: #fff;">
+			<div class="row" >
+				<p class="light">Your Booking request was processed Successfully!</p>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+window.setTimeout(function () {
+	$(".alerts-success").fadeTo(0, 0).slideUp(500, function () {
+			$(this).remove();
+	});
+}, 5000);
+</script>
+@endif

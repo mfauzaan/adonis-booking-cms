@@ -1,0 +1,53 @@
+@layout('admin/master')
+
+@section('content')
+
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"><h3 class="page-title">Activites</h3></div>
+            <div class="col-md-6 text-right"><a href="{{ route('activities.create') }}" class="btn btn-primary">Add Activity</a></div>
+          </div>
+
+        	<div class="row">
+							<!-- TABLE HOVER -->
+							<div class="panel">
+								<div class="panel-body">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+                      @each(activity in activities)
+                        <tr>
+												<td>{{activity.id}}</td>
+												<td>{{activity.name}}</td>
+												<td>{{activity.description}}</td>
+												<td>
+                        <form action="{{ route('activities.destroy', { id: activity.id })}}?_method=DELETE" method="POST" class="form-inline">
+                          {{ csrfField() }}
+                          <a href="{{ route('activities.edit', { id: activity.id })}}" class="btn btn-primary btn-sm">Edit</a>
+                          <button type="submit" class="btn btn-danger btn-sm">Delete</a>
+                        </form>
+                        </td>
+											</tr>
+                      @endeach
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END TABLE HOVER -->
+						</div>
+            <!-- END CONDENSED TABLE -->
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+@endsection
