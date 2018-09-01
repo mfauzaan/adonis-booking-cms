@@ -28,6 +28,7 @@ Route.group(() => {
   Route.resource('reviews', 'Admin/ReviewController')
   Route.resource('activities', 'Admin/ActivityController')
   Route.resource('options', 'Admin/OptionController')
+  Route.resource('header_images', 'Admin/HeaderController')
   Route.resource('bookings', 'Admin/BookingController').only(['store', 'index', 'edit'])
   Route.get('logout', 'Admin/UserController.logout')
 }).middleware('auth').prefix('admin')

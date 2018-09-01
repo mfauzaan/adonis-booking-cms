@@ -5,13 +5,14 @@
 						<h2 class="light dark-grey underline uppercase">Activity</h2>
 					</div>
 				</div>
+
 				<div class="white-space-3"></div>
 					<div class="owl-carousel owl-theme">
 						@each(activity in activities)
 							<div class="white-space-2">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="assets/images/default/640x426.png" class="img-responsive" alt="dining">
+										<img src="{{ activity.photo.path }}" class="img-responsive" alt="dining">
 										<div class="white-space-2"></div>
 									</div>
 									<div class="col-md-6">

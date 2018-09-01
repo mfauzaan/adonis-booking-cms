@@ -1,0 +1,47 @@
+@layout('admin/master')
+
+@section('content')
+
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"><h3 class="page-title">Header Images</h3></div>
+          </div>
+
+        	<div class="row">
+							<!-- TABLE HOVER -->
+							<div class="panel">
+								<div class="panel-body">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th></th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+                      @each(photo in photos)
+                        <tr>
+												<td>{{photo.name}}</td>
+												<td>{{photo.path}}</td>
+												<td>
+                          <a href="{{ route('header_images.edit', { id: photo.id })}}" class="btn btn-primary btn-sm">Edit</a>
+                        </form>
+                        </td>
+											</tr>
+                      @endeach
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END TABLE HOVER -->
+						</div>
+            <!-- END CONDENSED TABLE -->
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+@endsection

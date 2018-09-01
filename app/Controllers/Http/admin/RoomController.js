@@ -12,14 +12,15 @@ class RoomController {
   }
 
   async store ({ request, response }) {
-    const { name, description, type, price, breakfast }  = request.all()
+    const { name, description, type, price, breakfast, max_occupancy }  = request.all()
 
     await Room.create({
       name,
       description,
       type,
       price,
-      breakfast
+      breakfast,
+      max_occupancy
     })
 
     response.route('rooms.index')
@@ -32,10 +33,10 @@ class RoomController {
 
   async update ({ params, request, response}) {
     const room = await Room.find(params.id)
-    const { name, description, type, price, breakfast } = request.all()
+    const { name, description, type, price, breakfast, max_occupancy } = request.all()
 
     room.merge({
-      name, description, type, price, breakfast
+      name, description, type, price, breakfast, max_occupancy
     })
 
     await room.save()

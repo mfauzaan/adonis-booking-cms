@@ -1,9 +1,10 @@
-	<div class="modal fade" id="room-details-modal" tabindex="-1" role="dialog">
+	@each(room in rooms)
+			<div class="modal fade" id="room-details-modal-{{room.id}}" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="flaticon-cross-out"></span></button>
-					<h4 class="modal-title light">Aurelia Hotel - Deluxe A</h4>
+					<h4 class="modal-title light">{{ room.name }}</h4>
 				</div>
 				<div class="modal-body">
 					<div class="row">
@@ -13,14 +14,10 @@
 									<li data-target="#room-images" data-slide-to="0" class="active"></li>
 									<li data-target="#room-images" data-slide-to="1"></li>
 									<li data-target="#room-images" data-slide-to="2"></li>
-									<li data-target="#room-images" data-slide-to="3"></li>
 								</ol>
 
 								<div class="carousel-inner" role="listbox">
 									<div class="item active">
-										<img src="assets/images/default/300x250.png" alt="rooms-carousel">
-									</div>
-									<div class="item">
 										<img src="assets/images/default/300x250.png" alt="rooms-carousel">
 									</div>
 									<div class="item">
@@ -43,8 +40,8 @@
 						<div class="col-md-7">
 							<div class="row">
 								<div class="col-sm-6">
-									<h2>$374.82<small>/night</small></h2>
-									<p class="light">Breakfast Included</p>
+									<h2>${{ room.price}}<small>/night</small></h2>
+									<p class="light">{{ room.breakfast == true ? 'Breakfast Included' : ''}}</p>
 								</div>
 								<div class="col-sm-6">
 									<button class="button ghost white hotel-book-now" data-toggle="modal" data-target="#booking-form-modal">Book Now</button>
@@ -54,13 +51,14 @@
 							<div class="row">
 								<div class="col-md-6">
 									<h4>Room Amenities</h4>
-									<p class="light">Air conditioning, Balcony, Bathroom, Desk, Flat screen TV, Hair dryer, Minibar, Refrigerator, Shower, Toilet, Towels</p>
+									<p class="light">{{ room.room_amenities}}</p>
 									<div class="white-space-2"></div>
 								</div>
 								<div class="col-md-6">
 									<h4 class="">Max Occupancy</h4>
+									@each(number in range(room.max_occupancy))
 									<span class="flaticon-man-silhouette"></span>
-									<span class="flaticon-man-silhouette"></span>
+									@endeach
 								</div>
 							</div>
 						</div>
@@ -69,24 +67,11 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<h4>Description</h4>
-							<p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolore saepe itaque rerum iusto, modi ipsum deserunt qui aliquam, accusantium quasi tempore nam quam sapiente cum laudantium maiores. Consectetur, vero.</p>
-						</div>
-					</div>
-					<div class="white-space-2"></div>
-					<div class="row">
-						<div class="col-xs-12">
-							<h4>Payment Terms</h4>
-							<p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam adipisci accusamus unde omnis qui sint at perspiciatis expedita deleniti maxime odio velit deserunt, reiciendis suscipit id maiores, hic dicta rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum quibusdam nihil voluptatum aliquam voluptates laboriosam magni commodi impedit nulla, neque officia sequi facere, dignissimos magnam vero ratione non eveniet tempora!</p>
-						</div>
-					</div>
-					<div class="white-space-2"></div>
-					<div class="row">
-						<div class="col-xs-12">
-							<h4>Cancellation Policy</h4>
-							<p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit ipsum natus neque numquam debitis quis, nihil. Sint laborum porro, perspiciatis illum, pariatur obcaecati quia aliquam officia consequatur voluptatibus impedit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, ducimus cumque nulla. Voluptatem eligendi nihil laborum cupiditate adipisci aliquam temporibus voluptatibus quo blanditiis aperiam quaerat, expedita, magni voluptates delectus at.</p>
+						<p class="light">{{ room.description}}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	@endeach

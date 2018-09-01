@@ -219,7 +219,23 @@ $.fn.clickToggle = function( f1, f2 ) {
 			return f1.apply(this, arguments);
 		});
 	});
-
 }
+
+/**
+* Featured Image previw
+*/
+$("#featured_image").change(function () {
+	var input = this;
+
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			$('.featured_image').attr('src', e.target.result);
+			$('.featured_image').hide();
+			$('.featured_image').fadeIn(650);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+});
 
 

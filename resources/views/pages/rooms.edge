@@ -20,12 +20,12 @@
 				<div class="filtr-item col-md-3 col-sm-6" data-category="1, {{room.type}}">
 						<div class="white-space-2 room-box">
 							<div class="room-image">
-								<a href="#" data-toggle="modal" data-target="#room-details-modal"><i class="flaticon-search"></i></a>
+							<a href="#" data-toggle="modal" data-target="#room-details-modal-{{room.id}}"><i class="flaticon-search"></i></a>
 								<img class="img-responsive" src="assets/images/default/640x426.png" alt="room-image">
 							</div>
 							<h4 class="room-type">{{room.name}}</h4>
 							<p class="light">{{room.description}}</p>
-							<button class="button dark large" data-toggle="modal" data-target="#room-details-modal">View Details</button>
+							<button class="button dark large" data-toggle="modal" data-target="#room-details-modal-{{room.id}}">View Details</button>
 						</div>
 					</div>
 					@endeach

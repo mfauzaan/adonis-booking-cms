@@ -17,7 +17,7 @@ class HomeController {
     //Rooms
     const rooms = await Room.all()
     const reviews = await Review.all()
-    const activities = await Activity.all()
+    const activities = await Activity.query().with('photo').fetch()
 
     return view.render('master', {
       number,

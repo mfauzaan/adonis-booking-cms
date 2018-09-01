@@ -1,0 +1,16 @@
+  {{ csrfField() }}
+  <div class="row">
+    <!-- TABLE HOVER -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">Image Infromations</h3>
+      </div>
+      <div class="panel-body">
+      <img src="{{ photo.path }}" class="img-thumbnail featured_image" style="width: 600px;margin-bottom: 20px;" >
+         <input type="file" class="form-control-file"  name="featured_image" id="featured_image" >
+        <br>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+    <!-- END TABLE HOVER -->
+</div>

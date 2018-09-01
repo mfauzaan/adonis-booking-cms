@@ -10,8 +10,11 @@
         <input type="text" class="form-control" name="name" placeholder="Name" value="{{ old('name', activity.name || '') }}" required>
         <br>
         <label for="">Description</label>
-        <textarea class="form-control" placeholder="Description" name="description" rows="4">{{ old('description', activity.description || '') }}</textarea>
+        <textarea required class="form-control" placeholder="Description" name="description" rows="4">{{ old('description', activity.description || '') }}</textarea>
         <br>
+        <img src="{{ photo.path ? photo.path : '/admin/image_upload.png' }}" class="img-thumbnail featured_image" style="width: 600px;margin-bottom: 20px;" >
+      <input type="file" class="form-control-file"  name="featured_image" id="featured_image" {{ activity.name ? '' : 'required' }}>
+         <br>
       <button type="submit" class="btn btn-primary">{{ activity.name ? 'Save Changes' : 'Create Activty' }}</button>
       </div>
     </div>

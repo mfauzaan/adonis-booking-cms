@@ -8,7 +8,7 @@ class PhotosSchema extends Schema {
       table.increments()
       table.string('name')
       table.string('path')
-      table.string('parent_id')
+      table.integer('parent_id')
       table.string('type')
       table.timestamps()
     })

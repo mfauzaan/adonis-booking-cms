@@ -22,6 +22,9 @@
         <label for="">Price</label>
         <input type="number" class="form-control" name="price" placeholder="Price" value="{{ old('price', room.price || '') }}" required step=".01">
         <br>
+        <label for="">Max Occupancy</label>
+        <input type="number" class="form-control" name="max_occupancy" placeholder="Max Occupancy" value="{{ old('max_occupancy', room.max_occupancy || '') }}" required>
+        <br>
         <label for="">Breakfast Included</label>
         <label class="fancy-radio">
           <input name="breakfast" value="true" type="radio" checked {{room.breakfast == true ? 'checked' : ''}}>
