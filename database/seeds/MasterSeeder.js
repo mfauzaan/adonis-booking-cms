@@ -47,19 +47,16 @@ class MasterSeeder {
 
     await Photo.createMany([{
       name: 'Image 1',
-      description: '955755',
       type: 'Header',
       path: '/assets/images/default/header_1.jpg'
     },
     {
       name: 'Image 2',
-      description: '955755',
       type: 'Header',
       path: 'assets/images/default/header_2.jpg'
     },
     {
       name: 'Image 3',
-      description: '955755',
       type: 'Header',
       path: '/assets/images/default/header_3.jpg'
     }])
