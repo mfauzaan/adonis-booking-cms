@@ -18,7 +18,7 @@ module.exports = function registerViewGlobals() {
        * Add required classes to the anchor tag. Note, he detect the current url
        * and add active class to anchor
        */
-      attributes.push(`class="${this.resolve('url').startsWith(meta.href) ? 'nav-item--active' : ''} nav-item"`)
+      attributes.push(`class="${this.resolve('url').startsWith(meta.href) ? 'active' : ''} "`)
       /**
        * Set target to _blank for external urls
        */
@@ -26,7 +26,7 @@ module.exports = function registerViewGlobals() {
         attributes.push('target="_blank"')
       }
 
-      return this.safe(`<li ${attributes.join(' ')}> <a href="${meta.href}">${meta.title}</a></li>`)
+      return this.safe(`<li> <a ${attributes.join(' ')} href="${meta.href}"><i class="lnr ${meta.icon}"></i><span>${meta.title}</span></a></li>`)
     }
 
     //////////////////

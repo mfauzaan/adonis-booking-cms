@@ -37,10 +37,10 @@ var aurelia = (function() {
 
 			// SLIDES
 			slides: [
-				{ src: 'assets/images/default/1280x720.png' },
-				{ src: 'assets/images/default/1280x720.png' },
-				{ src: 'assets/images/default/1280x720.png' },
-				{ src: 'assets/images/default/1280x720.png' },
+				{ src: 'assets/images/default/header_1.jpg' },
+				{ src: 'assets/images/default/header_2.jpg' },
+				{ src: 'assets/images/default/header_3.jpg' },
+				{ src: 'assets/images/default/header_4.jpg' },
 			]
 		});
 	}

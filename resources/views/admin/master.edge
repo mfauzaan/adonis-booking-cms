@@ -66,13 +66,13 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/admin/dashboard" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="{{ route('rooms.index') }}" class=""><i class="lnr lnr-code"></i> <span>Rooms</span></a></li>
-						<li><a href="{{ route('activities.index')}}" class=""><i class="lnr lnr-cog"></i> <span>Activities</span></a></li>
-						<li><a href="{{ route('reviews.index') }}" class=""><i class="lnr lnr-chart-bars"></i> <span>Reviews</span></a></li>
-						<li><a href="{{ route('bookings.index') }}" class=""><i class="lnr lnr-chart-bars"></i> <span>Bookings</span></a></li>
-						<li><a href="{{ route('header_images.index') }}" class=""><i class="lnr lnr-chart-bars"></i> <span>Header Images</span></a></li>
-						<li><a href="{{ route('options.index')}}" class=""><i class="lnr lnr-alarm"></i> <span>Options</span></a></li>
+						{{ navbarAnchor({ href: '/admin/dashboard', title: 'Dashboard', icon: 'lnr-home' }) }} 
+						{{ navbarAnchor({ href: route('rooms.index'), title: 'Rooms', icon: 'lnr-code' }) }} 
+						{{ navbarAnchor({ href: route('activities.index'), title: 'Activities', icon: 'lnr-cog' }) }} 
+						{{ navbarAnchor({ href: route('reviews.index'), title: 'Reviews', icon: 'lnr-chart-bars' }) }} 
+						{{ navbarAnchor({ href: route('bookings.index'), title: 'Bookings', icon: 'lnr-chart-bars' }) }} 
+						{{ navbarAnchor({ href: route('header_images.index'), title: 'Images', icon: 'lnr-chart-bars' }) }} 
+						{{ navbarAnchor({ href: route('options.index'), title: 'Options', icon: 'lnr-alarm' }) }} 
 					</ul>
 				</nav>
 			</div>
