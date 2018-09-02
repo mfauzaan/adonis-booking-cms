@@ -15,7 +15,7 @@ class HomeController {
     const instagram = await Option.findBy({ name: 'instagram' })
 
     //Rooms
-    const rooms = await Room.all()
+    const rooms = await Room.query().with('photos').fetch()
     const reviews = await Review.all()
     const activities = await Activity.query().with('photo').fetch()
 

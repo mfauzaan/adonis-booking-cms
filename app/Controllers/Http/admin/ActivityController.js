@@ -54,6 +54,7 @@ class ActivityController {
       name, description
     })
 
+    
     await activity.save()
 
     const featuredImage = request.file('featured_image')

@@ -12,6 +12,9 @@
         <label for="">Description</label>
         <textarea class="form-control" placeholder="Description" name="description" rows="4">{{ old('description', room.description || '') }}</textarea>
         <br>
+        <label for="">Room Amenties</label>
+        <textarea class="form-control" placeholder="Room Amenties" name="room_amenities" rows="4">{{ old('room_amenities', room.room_amenities || '') }}</textarea>
+        <br>
         <label for="" >Type</label>
         <select class="form-control" name="type">
           <option value="2" {{ room.type == '2' ? 'selected' : '' }}>Single</option>
@@ -35,8 +38,41 @@
           <span><i></i>False</span>
         </label>
         <br>
+
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <a class="thumbnail">
+              <img src="{{ featured_image.name ? featured_image.path : '/admin/image_upload.png' }}" class="img-thumbnail featured_image" style="margin-bottom:3px;">
+              <input type="file" class="form-control-file"  name="featured_image" id="featured_image" {{ room.name ? '' : 'required' }}>
+            </a>
+          </div>
+
+            <div class="col-xs-6 col-md-3">
+            <a class="thumbnail">
+            <img src="{{ featured_image_2.name ? featured_image_2.path : '/admin/image_upload.png' }}" class="img-thumbnail featured_image_2" style="margin-bottom:3px;">
+              <input type="file" class="form-control-file"  name="featured_image_2" id="featured_image_2" {{ room.name ? '' : 'required' }}>
+            </a>
+          </div>
+
+            <div class="col-xs-6 col-md-3">
+            <a class="thumbnail">
+              <img src="{{ featured_image_3.name ? featured_image_3.path : '/admin/image_upload.png' }}" class="img-thumbnail featured_image_3" style="margin-bottom:3px;">
+              <input type="file" class="form-control-file"  name="featured_image_3" id="featured_image_3" {{ room.name ? '' : 'required' }}>
+            </a>
+          </div>
+
+            <div class="col-xs-6 col-md-3">
+            <a  class="thumbnail">
+              <img src="{{ featured_image_4.name ? featured_image_4.path : '/admin/image_upload.png' }}" class="img-thumbnail featured_image_4" style="margin-bottom:3px;">
+              <input type="file" class="form-control-file"  name="featured_image_4" id="featured_image_4" {{ room.name ? '' : 'required' }}>
+            </a>
+          </div>
+        </div>
+       
+        <br>
       <button type="submit" class="btn btn-primary">{{ room.name ? 'Save Changes' : 'Create Room' }}</button>
       </div>
     </div>
     <!-- END TABLE HOVER -->
 </div>
+

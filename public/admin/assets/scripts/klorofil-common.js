@@ -238,4 +238,55 @@ $("#featured_image").change(function () {
 	}
 });
 
+/**
+* Featured Image previw
+*/
+$("#featured_image_2").change(function () {
+	var input = this;
+
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			$('.featured_image_2').attr('src', e.target.result);
+			$('.featured_image_2').hide();
+			$('.featured_image_2').fadeIn(650);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+});
+
+/**
+* Featured Image previw
+*/
+$("#featured_image_3").change(function () {
+	var input = this;
+
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			$('.featured_image_3').attr('src', e.target.result);
+			$('.featured_image_3').hide();
+			$('.featured_image_3').fadeIn(650);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+});
+
+/**
+* Featured Image previw
+*/
+$("#featured_image_4").change(function () {
+	var input = this;
+
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			$('.featured_image_4').attr('src', e.target.result);
+			$('.featured_image_4').hide();
+			$('.featured_image_4').fadeIn(650);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+});
+
 
