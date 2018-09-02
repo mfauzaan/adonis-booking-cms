@@ -6,6 +6,7 @@ class UserController {
   }
 
   async login({ request, response, auth }) {
+
     // Retrieve username & Password
     const { username, password } = request.all()
 

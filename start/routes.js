@@ -16,7 +16,8 @@
 const Route = use('Route')
 
 Route.get('/', 'HomeController.index')
-Route.get('login', 'Admin/UserController.show')
+
+Route.get('login', 'Admin/UserController.show').middleware('guest')
 Route.post('login', 'Admin/UserController.login')
 
 // Protected Routes
