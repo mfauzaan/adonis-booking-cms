@@ -535,6 +535,8 @@ a.site-title {
 }
 .room-image img {
 	margin: 0 auto;
+	width: 260px;
+  height: 175px;
 }
 .room-image:hover a {
 	opacity: .8;
