@@ -661,3 +661,8 @@ a.site-title {
 	overflow: hidden;
 	position: relative;
 }
+
+.hide_content {
+  overflow: hidden;
+  height: 10em;
+}

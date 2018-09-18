@@ -58,8 +58,14 @@
 						@endeach
 						
 						<br><br>
-						<p>{{ review.name }}</p>
-						<p class="light">{{review.description}}</p>
+						<p >{{ review.name }}</p>
+						<p class="light hide_content">{{review.description}}</p>
+						<a href="#" onClick="(function(){
+								document.querySelector('.hide_content').style.height= 'auto';
+  							this.style.display= 'none';
+								return false;
+						})();return false;" 
+						class="button round smooth-scroll">Read more</a>
 					</div>
 					@endeach
 				</div>
