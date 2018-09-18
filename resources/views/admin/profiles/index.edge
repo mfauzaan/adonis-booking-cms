@@ -1,0 +1,33 @@
+@layout('admin/master')
+
+@section('content')
+
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"><h3 class="page-title">My Profile</h3></div>
+					</div>
+					
+					@if(old('error'))
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<i class="fa fa-times-circle"></i> {{ old('error') }}
+					</div>
+					@endif
+
+					@if(old('success'))
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<i class="fa fa-check-circle"></i> {{ old('success') }}
+					</div>
+					@endif
+
+        <form action="{{ route('profiles.store')}}" method="POST">
+            @include('admin.profiles.form')
+        </form>
+            <!-- END CONDENSED TABLE -->
+      </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+@endsection

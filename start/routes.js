@@ -26,6 +26,7 @@ Route.group(() => {
  // Route.get('images/:id/delete', 'Admin/ImageController.destroy')
 
   Route.resource('rooms', 'Admin/RoomController')
+  Route.resource('profiles', 'Admin/ProfileController')
   Route.resource('reviews', 'Admin/ReviewController')
   Route.resource('activities', 'Admin/ActivityController')
   Route.resource('options', 'Admin/OptionController')
