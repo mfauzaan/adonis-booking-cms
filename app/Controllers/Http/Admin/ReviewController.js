@@ -3,7 +3,7 @@ const Review = use('App/Models/Review')
 
 class ReviewController {
   async index({ view }) {
-    const reviews = await Review.all()
+    const reviews = await Review.query().orderBy('id', 'asc').fetch()
     return view.render('admin.reviews.index', { reviews: reviews.toJSON() })
   }
 

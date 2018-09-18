@@ -7,7 +7,7 @@ const Drive = use('Drive')
 
 class RoomController {
   async index({ view }) {
-    const rooms = await Room.all()
+    const rooms = await Room.query().orderBy('id', 'asc').fetch()
     return view.render('admin.rooms.index', { rooms: rooms.toJSON() })
   }
 

@@ -7,7 +7,7 @@ var Drive = use('Drive')
 
 class ActivityController {
   async index({ view }) {
-    const activities = await Activity.all()
+    const activities = await Activity.query().orderBy('id', 'asc').fetch()
     return view.render('admin.activities.index', { activities: activities.toJSON() })
   }
 
